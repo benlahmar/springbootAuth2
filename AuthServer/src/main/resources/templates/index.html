@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <title>page test</title>
+    </head>
+    <body>
+   		<h1>Pages</h1>
+   		<p>add  <a th:href="@{/webpublic}">pour ...</a>  page public.</p>
+   		<p>Si  un user  normal  <a th:href="@{/webpriver}">ici</a>  priver</p>
+   		<p>Si  un administrador normal  <a th:href="@{/webadmin}">ici</a>  page administrador</p>   		
+   		<div sec:authorize="isAuthenticated()">
+			Hello <span sec:authentication="name">someone</span>
+			<p><a th:href="@{/logout}">Disconnect</a></p>
+		</div>
+   		
+    </body>
+</html>
